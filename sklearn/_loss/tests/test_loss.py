@@ -1,6 +1,9 @@
 import pickle
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from numpy.testing import assert_allclose, assert_array_equal
 import pytest
 from pytest import approx

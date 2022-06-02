@@ -1,7 +1,10 @@
 import argparse
 from time import time
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pandas as pd
 
 from sklearn.model_selection import train_test_split

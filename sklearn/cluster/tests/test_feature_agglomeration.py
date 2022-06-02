@@ -2,7 +2,10 @@
 Tests for sklearn.cluster._feature_agglomeration
 """
 # Authors: Sergul Aydore 2017
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from numpy.testing import assert_array_equal
 from sklearn.cluster import FeatureAgglomeration

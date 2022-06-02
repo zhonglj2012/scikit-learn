@@ -189,7 +189,10 @@ take several parameters:
 Here is an example of building custom scorers, and of using the
 ``greater_is_better`` parameter::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> def my_custom_loss_func(y_true, y_pred):
     ...     diff = np.abs(y_true - y_pred).max()
     ...     return np.log1p(diff)
@@ -426,7 +429,10 @@ defined as
 where :math:`1(x)` is the `indicator function
 <https://en.wikipedia.org/wiki/Indicator_function>`_.
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.metrics import accuracy_score
   >>> y_pred = [0, 2, 1, 3]
   >>> y_true = [0, 1, 2, 3]
@@ -471,7 +477,10 @@ corresponding true value, then the fraction of correct predictions over
 where :math:`k` is the number of guesses allowed and :math:`1(x)` is the
 `indicator function <https://en.wikipedia.org/wiki/Indicator_function>`_.
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.metrics import top_k_accuracy_score
   >>> y_true = np.array([0, 1, 2, 2])
   >>> y_score = np.array([[0.5, 0.2, 0.2],
@@ -900,7 +909,10 @@ Here are some small examples in binary classification::
   (array([0.66..., 1.        ]), array([1. , 0.5]), array([0.71..., 0.83...]), array([2, 2]))
 
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.metrics import precision_recall_curve
   >>> from sklearn.metrics import average_precision_score
   >>> y_true = np.array([0, 0, 1, 1])
@@ -1014,7 +1026,10 @@ apply to multilabel and multiclass through the use of `average` (see
 
 In the binary case::
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.metrics import jaccard_score
   >>> y_true = np.array([[0, 1, 1],
   ...                    [1, 1, 0]])
@@ -1248,7 +1263,10 @@ Here is an example demonstrating the use of the
 :func:`multilabel_confusion_matrix` function with
 :term:`multilabel indicator matrix` input::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import multilabel_confusion_matrix
     >>> y_true = np.array([[1, 0, 1],
     ...                    [0, 1, 0]])
@@ -1355,7 +1373,10 @@ value and the target scores, which can either be probability estimates of the
 positive class, confidence values, or binary decisions.
 Here is a small example of how to use the :func:`roc_curve` function::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import roc_curve
     >>> y = np.array([1, 1, 2, 2])
     >>> scores = np.array([0.1, 0.4, 0.35, 0.8])
@@ -1708,7 +1729,10 @@ square difference is smaller), the more accurate the prediction is.
 
 Here is a small example of usage of this function::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import brier_score_loss
     >>> y_true = np.array([0, 1, 1, 0])
     >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
@@ -1930,7 +1954,10 @@ maximal rank that would have been assigned to all tied values.
 
 Here is a small example of usage of this function::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import coverage_error
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
@@ -1977,7 +2004,10 @@ elements in the set), and :math:`||\cdot||_0` is the :math:`\ell_0` "norm"
 
 Here is a small example of usage of this function::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import label_ranking_average_precision_score
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])
@@ -2012,7 +2042,10 @@ elements in the set) and :math:`||\cdot||_0` is the :math:`\ell_0` "norm"
 
 Here is a small example of usage of this function::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import label_ranking_loss
     >>> y_true = np.array([[1, 0, 0], [0, 0, 1]])
     >>> y_score = np.array([[0.75, 0.5, 1], [1, 0.2, 0.1]])

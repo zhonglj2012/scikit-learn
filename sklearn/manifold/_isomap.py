@@ -4,7 +4,10 @@
 # License: BSD 3 clause (C) 2011
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from scipy.sparse import issparse
 from scipy.sparse.csgraph import shortest_path

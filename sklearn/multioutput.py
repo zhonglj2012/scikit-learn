@@ -14,7 +14,10 @@ extends single output estimators to multioutput estimators.
 #
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 from joblib import Parallel
 
@@ -297,7 +300,10 @@ class MultiOutputRegressor(RegressorMixin, _MultiOutputEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.datasets import load_linnerud
     >>> from sklearn.multioutput import MultiOutputRegressor
     >>> from sklearn.linear_model import Ridge
@@ -392,7 +398,10 @@ class MultiOutputClassifier(ClassifierMixin, _MultiOutputEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.datasets import make_multilabel_classification
     >>> from sklearn.multioutput import MultiOutputClassifier
     >>> from sklearn.linear_model import LogisticRegression

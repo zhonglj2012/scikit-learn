@@ -12,7 +12,10 @@ from libc.stdint cimport SIZE_MAX
 from ..tree._utils cimport safe_realloc, sizet_ptr_to_ndarray
 from ..utils import check_array
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport numpy as cnp
 cnp.import_array()
 

@@ -7,7 +7,10 @@
 # License: 3-clause BSD.
 
 from numbers import Integral
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 from scipy.sparse.linalg import svds
 
@@ -138,7 +141,10 @@ class TruncatedSVD(_ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstim
     --------
     >>> from sklearn.decomposition import TruncatedSVD
     >>> from scipy.sparse import csr_matrix
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> np.random.seed(0)
     >>> X_dense = np.random.rand(100, 100)
     >>> X_dense[:, 2 * np.arange(50)] = 0

@@ -1,5 +1,8 @@
 from libc cimport math
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport numpy as cnp
 from libc.stdio cimport printf
 

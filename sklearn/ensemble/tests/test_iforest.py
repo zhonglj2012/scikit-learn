@@ -9,7 +9,10 @@ Testing for Isolation Forest algorithm (sklearn.ensemble.iforest).
 import pytest
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.utils._testing import assert_array_equal
 from sklearn.utils._testing import assert_array_almost_equal

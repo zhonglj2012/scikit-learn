@@ -42,7 +42,10 @@ Nearest neighbor and the curse of dimensionality
     different types of irises (Setosa, Versicolour, and Virginica) from
     their petal and sepal length and width::
 
-        >>> import numpy as np
+        >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
         >>> from sklearn import datasets
         >>> iris_X, iris_y = datasets.load_iris(return_X_y=True)
         >>> np.unique(iris_y)

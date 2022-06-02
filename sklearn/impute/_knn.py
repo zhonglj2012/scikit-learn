@@ -2,7 +2,10 @@
 #          Thomas J Fan <thomasjpfan@gmail.com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from ._base import _BaseImputer
 from ..utils.validation import FLOAT_DTYPES
@@ -104,7 +107,10 @@ class KNNImputer(_BaseImputer):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.impute import KNNImputer
     >>> X = [[1, 2, np.nan], [3, 4, 3], [np.nan, 6, 5], [8, 8, 7]]
     >>> imputer = KNNImputer(n_neighbors=2)

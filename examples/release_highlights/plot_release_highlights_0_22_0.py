@@ -96,7 +96,10 @@ clf.fit(X_train, y_train).score(X_test, y_test)
 # The :func:`inspection.permutation_importance` can be used to get an
 # estimate of the importance of each feature, for any fitted estimator:
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 from sklearn.ensemble import RandomForestClassifier

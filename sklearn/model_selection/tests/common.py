@@ -2,7 +2,10 @@
 Common utilities for testing model selection.
 """
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.model_selection import KFold
 

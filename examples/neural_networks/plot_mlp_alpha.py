@@ -20,7 +20,10 @@ decision boundary.
 # Author: Issam H. Laradji
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
 from sklearn.model_selection import train_test_split

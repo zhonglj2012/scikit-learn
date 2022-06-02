@@ -42,7 +42,10 @@ pairwise distances of the row vectors of ``X`` are calculated. Similarly,
 and `Y` using different kernel functions. See the API reference for more
 details.
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import pairwise_distances
     >>> from sklearn.metrics.pairwise import pairwise_kernels
     >>> X = np.array([[2, 3], [3, 5], [5, 8]])

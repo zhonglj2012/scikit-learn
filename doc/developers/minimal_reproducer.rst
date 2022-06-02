@@ -309,7 +309,10 @@ can be used to create dummy numeric data.
 
     .. code-block:: python
 
-        import numpy as np
+        import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
         rng = np.random.RandomState(0)
         n_samples, n_features = 5, 5
@@ -327,7 +330,10 @@ as :class:`sklearn.preprocessing.StandardScaler`.
 
     .. code-block:: python
 
-        import numpy as np
+        import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
         rng = np.random.RandomState(0)
         n_samples, n_features = 5, 5
@@ -341,7 +347,10 @@ as :class:`sklearn.preprocessing.StandardScaler`.
 
     .. code-block:: python
 
-        import numpy as np
+        import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
         rng = np.random.RandomState(0)
         n_samples, n_features = 50, 5
@@ -361,7 +370,10 @@ transform numpy arrays into pandas objects using `pandas.DataFrame
 
 .. code-block:: python
 
-    import numpy as np
+    import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     import pandas as pd
 
     rng = np.random.RandomState(0)

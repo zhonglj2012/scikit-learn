@@ -4,7 +4,10 @@
 #         Giorgio Patrini
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg, sparse
 
 from ._base import _BasePCA
@@ -372,7 +375,10 @@ class IncrementalPCA(_BasePCA):
         Examples
         --------
 
-        >>> import numpy as np
+        >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
         >>> from sklearn.decomposition import IncrementalPCA
         >>> X = np.array([[-1, -1], [-2, -1], [-3, -2],
         ...               [1, 1], [2, 1], [3, 2]])

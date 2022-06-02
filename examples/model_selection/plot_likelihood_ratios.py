@@ -166,7 +166,10 @@ extract_score(cross_validate(estimator, X, y, scoring=scoring, cv=10))
 # label `1` corresponds to the positive class "disease", whereas the label `0`
 # stands for "no-disease".
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from sklearn.inspection import DecisionBoundaryDisplay
 from collections import defaultdict

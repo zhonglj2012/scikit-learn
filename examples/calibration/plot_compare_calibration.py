@@ -57,7 +57,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 # the distribution of the predicted probabilities or more specifically,
 # the number of samples in each predicted probability bin.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.svm import LinearSVC
 

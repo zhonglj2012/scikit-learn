@@ -14,7 +14,10 @@ Clustering: grouping observations together
 
 ..
    >>> # Set the PRNG
-   >>> import numpy as np
+   >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
    >>> np.random.seed(1)
 
 K-means clustering
@@ -291,7 +294,10 @@ a maximum amount of independent information. It is able to recover
 ::
 
     >>> # Generate sample data
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from scipy import signal
     >>> time = np.linspace(0, 10, 2000)
     >>> s1 = np.sin(2 * time)  # Signal 1 : sinusoidal signal

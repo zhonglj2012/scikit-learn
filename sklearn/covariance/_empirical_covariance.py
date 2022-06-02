@@ -11,7 +11,10 @@ Maximum likelihood covariance estimator.
 
 # avoid division truncation
 import warnings
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg
 
 from .. import config_context
@@ -150,7 +153,10 @@ class EmpiricalCovariance(BaseEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.covariance import EmpiricalCovariance
     >>> from sklearn.datasets import make_gaussian_quantiles
     >>> real_cov = np.array([[.8, .3],

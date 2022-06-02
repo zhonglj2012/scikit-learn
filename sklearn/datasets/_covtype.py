@@ -20,7 +20,10 @@ from os.path import exists, join
 import os
 from tempfile import TemporaryDirectory
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import joblib
 
 from . import get_data_home

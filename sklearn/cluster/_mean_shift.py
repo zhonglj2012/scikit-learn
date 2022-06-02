@@ -14,7 +14,10 @@ Seeding is performed using a binning technique for scalability.
 #          Gael Varoquaux <gael.varoquaux@normalesup.org>
 #          Martino Sorbaro <martino.sorbaro@ed.ac.uk>
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import warnings
 from joblib import Parallel
 
@@ -367,7 +370,10 @@ class MeanShift(ClusterMixin, BaseEstimator):
     Examples
     --------
     >>> from sklearn.cluster import MeanShift
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 1], [2, 1], [1, 0],
     ...               [4, 7], [3, 5], [3, 6]])
     >>> clustering = MeanShift(bandwidth=2).fit(X)

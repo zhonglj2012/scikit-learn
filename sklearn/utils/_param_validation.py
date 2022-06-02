@@ -6,7 +6,10 @@ from numbers import Integral
 from numbers import Real
 import operator
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.sparse import issparse
 
 from .validation import _is_arraylike_not_scalar

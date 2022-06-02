@@ -16,7 +16,10 @@ and can be found here:
 
 
 cimport numpy as cnp
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 cdef extern from "src/MurmurHash3.h":
     void MurmurHash3_x86_32(void *key, int len, cnp.uint32_t seed, void *out)

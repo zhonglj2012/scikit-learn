@@ -10,7 +10,10 @@ sparse matrices.
 #          Jake Vanderplas <vanderplas@astro.washington.edu>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse
 
 from .deprecation import deprecated
@@ -40,7 +43,10 @@ def single_source_shortest_path_length(graph, source, *, cutoff=None):
     Examples
     --------
     >>> from sklearn.utils.graph import single_source_shortest_path_length
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> graph = np.array([[ 0, 1, 0, 0],
     ...                   [ 1, 0, 1, 0],
     ...                   [ 0, 1, 0, 1],

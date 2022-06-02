@@ -4,7 +4,10 @@
 import copy
 import re
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.special import gammaln
 import pytest
 

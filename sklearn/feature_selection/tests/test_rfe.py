@@ -5,7 +5,10 @@ Testing Recursive feature elimination
 from operator import attrgetter
 
 import pytest
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from numpy.testing import assert_array_almost_equal, assert_array_equal, assert_allclose
 from scipy import sparse
 

@@ -8,7 +8,10 @@ Nearest Centroid Classification
 # License: BSD 3 clause
 
 import warnings
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse as sp
 
 from ..base import BaseEstimator, ClassifierMixin
@@ -84,7 +87,10 @@ class NearestCentroid(ClassifierMixin, BaseEstimator):
     Examples
     --------
     >>> from sklearn.neighbors import NearestCentroid
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     >>> y = np.array([1, 1, 1, 2, 2, 2])
     >>> clf = NearestCentroid()

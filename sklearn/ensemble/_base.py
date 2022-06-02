@@ -7,7 +7,10 @@ from abc import ABCMeta, abstractmethod
 import numbers
 from typing import List
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from joblib import effective_n_jobs
 

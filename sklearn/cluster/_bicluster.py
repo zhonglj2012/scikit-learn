@@ -4,7 +4,10 @@
 
 from abc import ABCMeta, abstractmethod
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import numbers
 
 from scipy.linalg import norm
@@ -304,7 +307,10 @@ class SpectralCoclustering(BaseSpectral):
     Examples
     --------
     >>> from sklearn.cluster import SpectralCoclustering
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 1], [2, 1], [1, 0],
     ...               [4, 7], [3, 5], [3, 6]])
     >>> clustering = SpectralCoclustering(n_clusters=2, random_state=0).fit(X)
@@ -472,7 +478,10 @@ class SpectralBiclustering(BaseSpectral):
     Examples
     --------
     >>> from sklearn.cluster import SpectralBiclustering
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 1], [2, 1], [1, 0],
     ...               [4, 7], [3, 5], [3, 6]])
     >>> clustering = SpectralBiclustering(n_clusters=2, random_state=0).fit(X)

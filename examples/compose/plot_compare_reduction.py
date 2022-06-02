@@ -27,7 +27,10 @@ fitting of a transformer is costly.
 
 # Authors: Robert McGibbon, Joel Nothman, Guillaume Lemaitre
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_digits
 from sklearn.model_selection import GridSearchCV

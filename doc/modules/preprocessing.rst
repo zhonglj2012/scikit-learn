@@ -47,7 +47,10 @@ easy way to perform the following operation on an array-like
 dataset::
 
   >>> from sklearn import preprocessing
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> X_train = np.array([[ 1., -1.,  2.],
   ...                     [ 2.,  0.,  0.],
   ...                     [ 0.,  1., -1.]])
@@ -68,7 +71,10 @@ dataset::
          [-1.22...,  1.22..., -1.06...]])
 
 ..
-        >>> import numpy as np
+        >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
         >>> print_options = np.get_printoptions()
         >>> np.set_printoptions(suppress=True)
 
@@ -893,7 +899,10 @@ discretization strategy to :class:`~sklearn.preprocessing.FunctionTransformer`.
 For instance, we can use the Pandas function :func:`pandas.cut`::
 
   >>> import pandas as pd
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> bins = [0, 1, 13, 20, 60, np.inf]
   >>> labels = ['infant', 'kid', 'teen', 'adult', 'senior citizen']
   >>> transformer = preprocessing.FunctionTransformer(
@@ -996,7 +1005,10 @@ A simple and common method to use is polynomial features, which can get
 features' high-order and interaction terms. It is implemented in
 :class:`PolynomialFeatures`::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.preprocessing import PolynomialFeatures
     >>> X = np.arange(6).reshape(3, 2)
     >>> X
@@ -1075,7 +1087,10 @@ Some of the advantages of splines over polynomials are:
 
 The following code snippet shows splines in action::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.preprocessing import SplineTransformer
     >>> X = np.arange(5).reshape(5, 1)
     >>> X
@@ -1125,7 +1140,10 @@ to assist in data cleaning or processing. You can implement a transformer from
 an arbitrary function with :class:`FunctionTransformer`. For example, to build
 a transformer that applies a log transformation in a pipeline, do::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.preprocessing import FunctionTransformer
     >>> transformer = FunctionTransformer(np.log1p, validate=True)
     >>> X = np.array([[0, 1], [2, 3]])

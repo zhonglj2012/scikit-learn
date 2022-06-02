@@ -12,7 +12,10 @@ from inspect import signature
 from functools import partial
 
 from math import log
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from joblib import Parallel
 
 from scipy.special import expit
@@ -966,7 +969,10 @@ def calibration_curve(
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.calibration import calibration_curve
     >>> y_true = np.array([0, 0, 0, 0, 1, 1, 1, 1, 1])
     >>> y_pred = np.array([0.1, 0.2, 0.3, 0.4, 0.65, 0.7, 0.8, 0.9,  1.])

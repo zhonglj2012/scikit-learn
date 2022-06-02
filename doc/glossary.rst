@@ -546,7 +546,10 @@ General Concepts
     np
         A shorthand for Numpy due to the conventional import statement::
 
-            import numpy as np
+            import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
     online learning
         Where a model is iteratively updated by receiving each batch of ground

@@ -16,7 +16,10 @@ the number of dimensions.
 
 In both cases, only 10% of the features are informative.
 """
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import gc
 from time import time
 from sklearn.datasets import make_regression

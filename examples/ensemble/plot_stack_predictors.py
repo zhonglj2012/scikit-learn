@@ -38,7 +38,10 @@ stacking strategy. Stacking slightly improves the overall performance.
 # .. _`Ames Housing`: http://jse.amstat.org/v19n3/decock.pdf
 # .. _`OpenML`: https://www.openml.org/d/42165
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.datasets import fetch_openml
 from sklearn.utils import shuffle

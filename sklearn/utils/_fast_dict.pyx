@@ -13,7 +13,10 @@ from cython.operator cimport dereference as deref, preincrement as inc, \
 from libcpp.utility cimport pair
 from libcpp.map cimport map as cpp_map
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 # Import the C-level symbols of numpy
 cimport numpy as cnp

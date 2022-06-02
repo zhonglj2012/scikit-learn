@@ -31,7 +31,10 @@ X.head()
 # %%
 # In addition, we add some random features to the original data to
 # better illustrate the feature selection performed by the Lasso model.
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pandas as pd
 
 rng = np.random.RandomState(42)

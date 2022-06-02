@@ -14,7 +14,10 @@ the predicted probabilities.
 #         Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from matplotlib import pyplot as plt
 from matplotlib import cm

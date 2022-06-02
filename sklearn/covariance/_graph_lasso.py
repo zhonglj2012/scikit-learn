@@ -10,7 +10,10 @@ import operator
 import sys
 import time
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg
 from joblib import Parallel
 
@@ -410,7 +413,10 @@ class GraphicalLasso(EmpiricalCovariance):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.covariance import GraphicalLasso
     >>> true_cov = np.array([[0.8, 0.0, 0.2, 0.0],
     ...                      [0.0, 0.4, 0.0, 0.0],
@@ -778,7 +784,10 @@ class GraphicalLassoCV(GraphicalLasso):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.covariance import GraphicalLassoCV
     >>> true_cov = np.array([[0.8, 0.0, 0.2, 0.0],
     ...                      [0.0, 0.4, 0.0, 0.0],

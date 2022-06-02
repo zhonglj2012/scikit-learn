@@ -4,7 +4,10 @@ The data is mostly low rank but is a fat infinite tail.
 """
 import gc
 from time import time
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from collections import defaultdict
 
 from scipy.linalg import svd

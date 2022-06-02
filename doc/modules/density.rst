@@ -79,7 +79,10 @@ distribution.  The scikit-learn kernel density estimator can be used as
 follows:
 
    >>> from sklearn.neighbors import KernelDensity
-   >>> import numpy as np
+   >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
    >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
    >>> kde = KernelDensity(kernel='gaussian', bandwidth=0.2).fit(X)
    >>> kde.score_samples(X)

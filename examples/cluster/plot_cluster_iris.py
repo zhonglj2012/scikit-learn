@@ -19,7 +19,10 @@ and finally the ground truth.
 # Modified for documentation by Jaques Grobler
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 
 # Though the following import is not directly being used, it is required

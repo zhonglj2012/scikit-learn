@@ -99,7 +99,10 @@ matrix as a binary prediction (micro-averaging).
 # .................
 #
 # We will use a Linear SVC classifier to differentiate two types of irises.
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 

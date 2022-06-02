@@ -10,7 +10,10 @@ Here are implemented estimators that are resistant to outliers.
 
 import warnings
 import numbers
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg
 from scipy.stats import chi2
 
@@ -681,7 +684,10 @@ class MinCovDet(EmpiricalCovariance):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.covariance import MinCovDet
     >>> from sklearn.datasets import make_gaussian_quantiles
     >>> real_cov = np.array([[.8, .3],

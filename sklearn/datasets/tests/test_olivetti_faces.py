@@ -2,7 +2,10 @@
 or if specifically requested via environment variable
 (e.g. for travis cron job)."""
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.utils import Bunch
 from sklearn.datasets.tests.test_common import check_return_X_y

@@ -22,7 +22,10 @@ from collections.abc import Iterable
 from functools import partial
 from collections import Counter
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import copy
 import warnings
 

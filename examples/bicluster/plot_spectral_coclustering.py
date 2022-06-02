@@ -18,7 +18,10 @@ the biclusters.
 # Author: Kemal Eren <kemal@kemaleren.com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from matplotlib import pyplot as plt
 
 from sklearn.datasets import make_biclusters

@@ -8,7 +8,10 @@ DBSCAN: Density-Based Spatial Clustering of Applications with Noise
 #
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import numbers
 import warnings
 from scipy import sparse
@@ -288,7 +291,10 @@ class DBSCAN(ClusterMixin, BaseEstimator):
     Examples
     --------
     >>> from sklearn.cluster import DBSCAN
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 2], [2, 2], [2, 3],
     ...               [8, 7], [8, 8], [25, 80]])
     >>> clustering = DBSCAN(eps=3, min_samples=2).fit(X)

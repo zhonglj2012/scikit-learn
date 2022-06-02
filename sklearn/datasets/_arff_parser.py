@@ -4,7 +4,10 @@ from collections import OrderedDict
 from collections.abc import Generator
 from typing import List
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy as sp
 
 from ..externals import _arff

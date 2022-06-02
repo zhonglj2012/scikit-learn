@@ -20,7 +20,10 @@ trade-off.
 # Generate sample data
 # --------------------
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 n_features, n_samples = 40, 20
 np.random.seed(42)

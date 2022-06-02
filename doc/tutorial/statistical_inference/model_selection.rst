@@ -23,7 +23,10 @@ To get a better measure of prediction accuracy (which we can use as a
 proxy for goodness of fit of the model), we can successively split the
 data in *folds* that we use for training and testing::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X_folds = np.array_split(X_digits, 3)
     >>> y_folds = np.array_split(y_digits, 3)
     >>> scores = list()

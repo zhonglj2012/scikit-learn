@@ -14,7 +14,10 @@ The coefficients can be forced to be positive.
 # License: BSD 3 clause
 
 from itertools import cycle
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 
 from sklearn.linear_model import lasso_path, enet_path

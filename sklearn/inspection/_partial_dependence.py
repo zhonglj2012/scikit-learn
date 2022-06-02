@@ -7,7 +7,10 @@
 
 from collections.abc import Iterable
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse
 from scipy.stats.mstats import mquantiles
 

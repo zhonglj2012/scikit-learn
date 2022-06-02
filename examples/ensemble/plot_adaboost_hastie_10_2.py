@@ -93,7 +93,10 @@ ada_real.fit(X_train, y_train)
 # real AdaBoost classifiers for each new stump in `n_estimators`
 # added to the ensemble.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.metrics import zero_one_loss
 
 ada_discrete_err = np.zeros((n_estimators,))

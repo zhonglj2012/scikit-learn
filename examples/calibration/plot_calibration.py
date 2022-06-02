@@ -32,7 +32,10 @@ Brier score.
 # %%
 # Generate synthetic dataset
 # --------------------------
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.datasets import make_blobs
 from sklearn.model_selection import train_test_split

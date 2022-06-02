@@ -4,7 +4,10 @@
 # License: BSD 3 clause
 
 import warnings
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 
 from .base import BaseEstimator, ClassifierMixin, RegressorMixin
@@ -121,7 +124,10 @@ class DummyClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.dummy import DummyClassifier
     >>> X = np.array([-1, 1, 1, 1])
     >>> y = np.array([0, 1, 1, 1])
@@ -514,7 +520,10 @@ class DummyRegressor(MultiOutputMixin, RegressorMixin, BaseEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.dummy import DummyRegressor
     >>> X = np.array([1.0, 2.0, 3.0, 4.0])
     >>> y = np.array([2.0, 3.0, 5.0, 10.0])

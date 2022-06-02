@@ -172,7 +172,10 @@ gaussian_process.fit(X, y - y_mean)
 # Thus, we create synthetic data from 1958 to the current month. In addition,
 # we need to add the subtracted mean computed during training.
 import datetime
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 today = datetime.datetime.now()
 current_month = today.year + today.month / 12

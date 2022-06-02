@@ -12,7 +12,10 @@ import warnings
 from abc import ABCMeta, abstractmethod
 import numbers
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.sparse import csr_matrix, issparse
 from joblib import Parallel, effective_n_jobs
 
@@ -1107,7 +1110,10 @@ class RadiusNeighborsMixin:
         class from an array representing our data set and ask who's
         the closest point to [1, 1, 1]:
 
-        >>> import numpy as np
+        >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
         >>> samples = [[0., 0., 0.], [0., .5, 0.], [1., 1., .5]]
         >>> from sklearn.neighbors import NearestNeighbors
         >>> neigh = NearestNeighbors(radius=1.6)

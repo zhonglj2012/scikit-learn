@@ -3,7 +3,10 @@
 # License: BSD 3 clause
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse
 from scipy.optimize import linprog
 
@@ -86,7 +89,10 @@ class QuantileRegressor(LinearModel, RegressorMixin, BaseEstimator):
     Examples
     --------
     >>> from sklearn.linear_model import QuantileRegressor
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> n_samples, n_features = 10, 2
     >>> rng = np.random.RandomState(0)
     >>> y = rng.randn(n_samples)

@@ -19,7 +19,10 @@ from contextlib import closing
 import io
 import os.path
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 
 from .. import __version__

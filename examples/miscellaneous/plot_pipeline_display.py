@@ -89,7 +89,10 @@ pipe  # click on the diagram below to see the details of each step
 # :class:`~sklearn.linear_model.LogisticRegression`, and displays its visual
 # representation.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.pipeline import make_pipeline
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -132,7 +135,10 @@ pipe  # click on the diagram below to see the details of each step
 # :class:`~sklearn.ensemble.RandomForestClassifier` and displays its visual
 # representation.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.pipeline import make_pipeline
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer

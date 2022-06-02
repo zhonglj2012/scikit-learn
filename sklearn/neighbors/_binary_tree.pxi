@@ -148,7 +148,10 @@ from libc.math cimport fmin, fmax
 from libc.stdlib cimport calloc, malloc, free
 from libc.string cimport memcpy
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import warnings
 
 from ..metrics._dist_metrics cimport (
@@ -250,7 +253,10 @@ Examples
 --------
 Query for k-nearest neighbors
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.neighbors import {BinaryTree}
     >>> rng = np.random.RandomState(0)
     >>> X = rng.random_sample((10, 3))  # 10 points in 3 dimensions
@@ -264,7 +270,10 @@ Query for k-nearest neighbors
 Pickle and Unpickle a tree.  Note that the state of the tree is saved in the
 pickle operation: the tree needs not be rebuilt upon unpickling.
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> import pickle
     >>> rng = np.random.RandomState(0)
     >>> X = rng.random_sample((10, 3))  # 10 points in 3 dimensions
@@ -279,7 +288,10 @@ pickle operation: the tree needs not be rebuilt upon unpickling.
 
 Query for neighbors within a given radius
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> rng = np.random.RandomState(0)
     >>> X = rng.random_sample((10, 3))  # 10 points in 3 dimensions
     >>> tree = {BinaryTree}(X, leaf_size=2)     # doctest: +SKIP
@@ -292,7 +304,10 @@ Query for neighbors within a given radius
 
 Compute a gaussian kernel density estimate:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> rng = np.random.RandomState(42)
     >>> X = rng.random_sample((100, 3))
     >>> tree = {BinaryTree}(X)                # doctest: +SKIP
@@ -301,7 +316,10 @@ Compute a gaussian kernel density estimate:
 
 Compute a two-point auto-correlation function
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> rng = np.random.RandomState(0)
     >>> X = rng.random_sample((30, 3))
     >>> r = np.linspace(0, 1, 5)

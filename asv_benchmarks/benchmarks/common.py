@@ -7,7 +7,10 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from multiprocessing import cpu_count
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def get_from_config():

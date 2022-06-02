@@ -15,7 +15,10 @@ details of the training data and learn from the noise, i.e. they overfit.
 """
 
 # Import the necessary modules and libraries
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.tree import DecisionTreeRegressor
 import matplotlib.pyplot as plt
 

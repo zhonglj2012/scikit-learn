@@ -1,6 +1,9 @@
 from itertools import product
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from .. import confusion_matrix
 from ...utils import check_matplotlib_support

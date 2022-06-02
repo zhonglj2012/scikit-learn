@@ -10,7 +10,10 @@ MNIST dataset T-SNE benchmark
 import os
 import os.path as op
 from time import time
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import json
 import argparse
 from joblib import Memory

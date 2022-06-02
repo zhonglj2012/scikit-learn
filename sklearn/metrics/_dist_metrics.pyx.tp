@@ -30,7 +30,10 @@ implementation_specific_values = [
 # written for the scikit-learn project
 # License: BSD
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport numpy as cnp
 from cython cimport final
 

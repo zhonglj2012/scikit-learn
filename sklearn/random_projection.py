@@ -29,7 +29,10 @@ The main theoretical result behind the efficiency of random projection is the
 import warnings
 from abc import ABCMeta, abstractmethod
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg
 import scipy.sparse as sp
 
@@ -525,7 +528,10 @@ class GaussianRandomProjection(BaseRandomProjection):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.random_projection import GaussianRandomProjection
     >>> rng = np.random.RandomState(42)
     >>> X = rng.rand(25, 3000)
@@ -714,7 +720,10 @@ class SparseRandomProjection(BaseRandomProjection):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.random_projection import SparseRandomProjection
     >>> rng = np.random.RandomState(42)
     >>> X = rng.rand(25, 3000)

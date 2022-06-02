@@ -16,7 +16,10 @@ In that case, the model with 2 components and full covariance
 
 """
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import itertools
 
 from scipy import linalg

@@ -88,7 +88,10 @@ or with conda::
 # The following code shows splines in action, for more information, please
 # refer to the :ref:`User Guide <spline_transformer>`.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.preprocessing import SplineTransformer
 
 X = np.arange(5).reshape(5, 1)

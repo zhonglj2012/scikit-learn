@@ -57,7 +57,10 @@ forest.fit(X_train, y_train)
 #     cardinality** features (many unique values). See
 #     :ref:`permutation_importance` as an alternative below.
 import time
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 start_time = time.time()
 importances = forest.feature_importances_

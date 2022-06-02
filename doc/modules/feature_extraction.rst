@@ -998,7 +998,10 @@ the third axis. For rebuilding an image from all its patches, use
 :func:`reconstruct_from_patches_2d`. For example let use generate a 4x4 pixel
 picture with 3 color channels (e.g. in RGB format)::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.feature_extraction import image
 
     >>> one_image = np.arange(4 * 4 * 3).reshape((4, 4, 3))

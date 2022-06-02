@@ -1,5 +1,8 @@
 import pytest
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.neural_network._base import binary_log_loss
 from sklearn.neural_network._base import log_loss

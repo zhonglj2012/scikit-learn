@@ -33,7 +33,10 @@ In scikit-learn a random split into training and test sets
 can be quickly computed with the :func:`train_test_split` helper function.
 Let's load the iris data set to fit a linear support vector machine on it::
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.model_selection import train_test_split
   >>> from sklearn import datasets
   >>> from sklearn import svm
@@ -340,7 +343,10 @@ learned using :math:`k - 1` folds, and the fold left out is used for test.
 
 Example of 2-fold cross-validation on a dataset with 4 samples::
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.model_selection import KFold
 
   >>> X = ["a", "b", "c", "d"]
@@ -377,7 +383,10 @@ each repetition.
 
 Example of 2-fold K-Fold repeated 2 times::
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.model_selection import RepeatedKFold
   >>> X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
   >>> random_state = 12883823
@@ -544,7 +553,10 @@ two unbalanced classes.  We show the number of samples in each class and compare
 :class:`KFold`.
 
   >>> from sklearn.model_selection import StratifiedKFold, KFold
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> X, y = np.ones((50, 1)), np.hstack(([0] * 45, [1] * 5))
   >>> skf = StratifiedKFold(n_splits=3)
   >>> for train, test in skf.split(X, y):
@@ -823,7 +835,10 @@ To perform the train and test split, use the indices for the train and test
 subsets yielded by the generator output by the `split()` method of the
 cross-validation splitter. For example::
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.model_selection import GroupShuffleSplit
 
   >>> X = np.array([0.1, 0.2, 2.2, 2.4, 2.3, 4.55, 5.8, 0.001])

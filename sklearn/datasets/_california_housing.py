@@ -25,7 +25,10 @@ from os.path import exists
 from os import makedirs, remove
 import tarfile
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import logging
 
 import joblib

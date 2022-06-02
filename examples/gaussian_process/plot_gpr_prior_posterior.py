@@ -31,7 +31,10 @@ refer to the :ref:`User Guide <gp_kernels>`.
 # are drawn from the prior distribution while after model fitting, the samples are
 # drawn from the posterior distribution.
 import matplotlib.pyplot as plt
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def plot_gpr_samples(gpr_model, n_samples, ax):

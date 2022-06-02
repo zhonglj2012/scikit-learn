@@ -8,7 +8,10 @@
 #
 # License: BSD 3 clause (C) INRIA, University of Amsterdam
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import stats
 from ..utils.extmath import weighted_mode
 from ..utils.validation import _is_arraylike, _num_samples

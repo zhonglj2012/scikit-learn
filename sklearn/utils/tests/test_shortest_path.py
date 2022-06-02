@@ -1,6 +1,9 @@
 from collections import defaultdict
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 from numpy.testing import assert_array_almost_equal
 from sklearn.utils.graph import graph_shortest_path, single_source_shortest_path_length

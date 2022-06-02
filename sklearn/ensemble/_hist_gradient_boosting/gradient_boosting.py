@@ -5,7 +5,10 @@ from abc import ABC, abstractmethod
 from functools import partial
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from timeit import default_timer as time
 from ..._loss.loss import (
     _LOSSES,

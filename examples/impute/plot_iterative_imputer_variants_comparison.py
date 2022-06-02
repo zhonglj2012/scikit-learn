@@ -44,7 +44,10 @@ complex and costly missing values imputation strategies.
 
 """
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 import pandas as pd
 

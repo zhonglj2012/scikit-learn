@@ -3,7 +3,10 @@ import argparse
 import os
 from pprint import pprint
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from threadpoolctl import threadpool_limits
 import sklearn
 from sklearn.model_selection import train_test_split

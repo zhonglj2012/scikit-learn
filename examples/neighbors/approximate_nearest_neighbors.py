@@ -61,7 +61,10 @@ except ImportError:
     print("The package 'nmslib' is required to run this example.")
     sys.exit()
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from matplotlib.ticker import NullFormatter
 from scipy.sparse import csr_matrix

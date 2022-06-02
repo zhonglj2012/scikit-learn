@@ -45,7 +45,10 @@ print(diabetes.DESCR)
 # linear models, you may refer to
 # :ref:`sphx_glr_auto_examples_inspection_plot_linear_model_coefficient_interpretation.py`.
 import matplotlib.pyplot as plt
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.linear_model import RidgeCV
 
 ridge = RidgeCV(alphas=np.logspace(-6, 6, num=5)).fit(X, y)

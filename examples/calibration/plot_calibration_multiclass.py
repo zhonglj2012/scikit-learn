@@ -30,7 +30,10 @@ class of an instance (red: class 1, green: class 2, blue: class 3).
 # Author: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
 # License: BSD Style.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.datasets import make_blobs
 
 np.random.seed(0)

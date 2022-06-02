@@ -154,7 +154,10 @@ yet of what's going on inside this classifier?)
 
 Let's take a look at what the most informative features are:
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> def show_top10(classifier, vectorizer, categories):
   ...     feature_names = vectorizer.get_feature_names_out()
   ...     for i, category in enumerate(categories):

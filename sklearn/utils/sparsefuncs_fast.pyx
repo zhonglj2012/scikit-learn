@@ -10,7 +10,10 @@
 
 from libc.math cimport fabs, sqrt, pow
 cimport numpy as cnp
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport cython
 from cython cimport floating
 from numpy.math cimport isnan

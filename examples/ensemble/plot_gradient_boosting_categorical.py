@@ -114,7 +114,10 @@ hist_one_hot = make_pipeline(
 # etc., and treated as continuous features.
 
 from sklearn.preprocessing import OrdinalEncoder
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 ordinal_encoder = make_column_transformer(
     (

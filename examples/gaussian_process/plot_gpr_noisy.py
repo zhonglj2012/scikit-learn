@@ -20,7 +20,10 @@ initialization.
 # We will work in a setting where `X` will contain a single feature. We create a
 # function that will generate the target to be predicted. We will add an
 # option to add some noise to the generated target.
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def target_generator(X, add_noise=False):

@@ -2,7 +2,10 @@ import functools
 from typing import List, Any
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 import pytest
 

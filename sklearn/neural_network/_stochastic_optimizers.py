@@ -4,7 +4,10 @@
 # Authors: Jiyuan Qian <jq401@nyu.edu>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 class BaseOptimizer:

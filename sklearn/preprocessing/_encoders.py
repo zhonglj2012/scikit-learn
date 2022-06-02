@@ -5,7 +5,10 @@
 import numbers
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse
 
 from ..base import BaseEstimator, TransformerMixin, _OneToOneFeatureMixin
@@ -420,7 +423,10 @@ class OneHotEncoder(_BaseEncoder):
 
     Infrequent categories are enabled by setting `max_categories` or `min_frequency`.
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([["a"] * 5 + ["b"] * 20 + ["c"] * 10 + ["d"] * 3], dtype=object).T
     >>> ohe = OneHotEncoder(max_categories=3, sparse=False).fit(X)
     >>> ohe.infrequent_categories_
@@ -1213,7 +1219,10 @@ class OrdinalEncoder(_OneToOneFeatureMixin, _BaseEncoder):
     By default, :class:`OrdinalEncoder` is lenient towards missing values by
     propagating them.
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = [['Male', 1], ['Female', 3], ['Female', np.nan]]
     >>> enc.fit_transform(X)
     array([[ 1.,  0.],

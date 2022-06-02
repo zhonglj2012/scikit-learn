@@ -2,7 +2,10 @@ from contextlib import suppress
 from collections import Counter
 from typing import NamedTuple
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from . import is_scalar_nan
 
 

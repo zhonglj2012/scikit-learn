@@ -16,7 +16,10 @@ from libc.string cimport memcpy
 from libc.string cimport memset
 from libc.math cimport fabs
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport numpy as cnp
 cnp.import_array()
 

@@ -20,7 +20,10 @@ simultaneously using grid search, but pick only the ones deemed most important.
 
 """
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from time import time
 import scipy.stats as stats

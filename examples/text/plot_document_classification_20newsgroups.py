@@ -169,7 +169,10 @@ _ = ax.set_title(
 # by looking at the words with the highest average feature effects:
 
 import pandas as pd
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def plot_feature_effects():

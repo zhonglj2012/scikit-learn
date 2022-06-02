@@ -27,7 +27,10 @@ namely the Pareto distribution.
 # synthetic datasets. The true generative random processes for both datasets
 # will be composed by the same expected value with a linear relationship with a
 # single feature `x`.
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 rng = np.random.RandomState(42)
 x = np.linspace(start=0, stop=10, num=100)

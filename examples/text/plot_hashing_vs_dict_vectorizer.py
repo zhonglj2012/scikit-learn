@@ -163,7 +163,10 @@ vectorizer.vocabulary_["example"]
 # the original dictionary is to count the number of active columns in the
 # encoded feature matrix. For such a purpose we define the following function:
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def n_nonzero_columns(X):

@@ -18,7 +18,10 @@ give us much regarding `y` when compared to just feature 1.
 # First we load the diabetes dataset.
 
 from sklearn import datasets
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 X, y = datasets.load_diabetes(return_X_y=True)
 indices = (0, 1)

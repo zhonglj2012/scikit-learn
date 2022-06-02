@@ -34,7 +34,10 @@ WARNING: Do not edit .pyx file directly, it is generated from .pyx.tp
 cimport cython
 from libc.limits cimport INT_MAX
 cimport numpy as cnp
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 cnp.import_array()
 

@@ -10,7 +10,10 @@ import platform
 import inspect
 import re
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from . import __version__
 from ._config import get_config

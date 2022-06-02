@@ -41,7 +41,10 @@ of examples is fixed, and the desired number of components varies.
 
 import time
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 
 from numpy.testing import assert_array_almost_equal

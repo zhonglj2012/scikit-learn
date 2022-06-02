@@ -1,6 +1,9 @@
 import pytest
 import scipy
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from numpy.testing import assert_array_equal
 
 from sklearn.preprocessing import StandardScaler

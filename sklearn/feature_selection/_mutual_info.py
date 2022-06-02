@@ -1,7 +1,10 @@
 # Author: Nikolay Mayorov <n59_ru@hotmail.com>
 # License: 3-clause BSD
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.sparse import issparse
 from scipy.special import digamma
 

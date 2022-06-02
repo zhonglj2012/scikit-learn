@@ -3,7 +3,10 @@
 
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 
 from ._kmeans import _BaseKMeans
@@ -189,7 +192,10 @@ class BisectingKMeans(_BaseKMeans):
     Examples
     --------
     >>> from sklearn.cluster import BisectingKMeans
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 2], [1, 4], [1, 0],
     ...               [10, 2], [10, 4], [10, 0],
     ...               [10, 6], [10, 8], [10, 10]])

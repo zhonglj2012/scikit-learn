@@ -7,7 +7,10 @@ import warnings
 from abc import ABCMeta, abstractmethod
 from operator import attrgetter
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.sparse import issparse, csc_matrix
 
 from ..base import TransformerMixin

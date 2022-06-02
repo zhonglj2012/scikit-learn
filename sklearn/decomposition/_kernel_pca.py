@@ -4,7 +4,10 @@
 #         Sylvain Marie <sylvain.marie@schneider-electric.com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import numbers
 from scipy import linalg
 from scipy.sparse.linalg import eigsh

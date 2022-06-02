@@ -1778,7 +1778,10 @@ Silhouette Coefficient for each sample.
 In normal usage, the Silhouette Coefficient is applied to the results of a
 cluster analysis.
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.cluster import KMeans
   >>> kmeans_model = KMeans(n_clusters=3, random_state=1).fit(X)
   >>> labels = kmeans_model.labels_
@@ -1838,7 +1841,10 @@ sum of distances squared):
 In normal usage, the Calinski-Harabasz index is applied to the results of a
 cluster analysis:
 
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
   >>> from sklearn.cluster import KMeans
   >>> kmeans_model = KMeans(n_clusters=3, random_state=1).fit(X)
   >>> labels = kmeans_model.labels_

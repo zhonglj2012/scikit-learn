@@ -1,6 +1,9 @@
 """Testing for Spectral Biclustering methods"""
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 from scipy.sparse import csr_matrix, issparse
 

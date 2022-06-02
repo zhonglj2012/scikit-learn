@@ -6,7 +6,10 @@
 from abc import ABCMeta, abstractmethod
 from copy import deepcopy
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from joblib import Parallel
 import scipy.sparse as sparse
 

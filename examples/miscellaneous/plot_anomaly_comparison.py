@@ -68,7 +68,10 @@ the problem is completely unsupervised so model selection can be a challenge.
 
 import time
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib
 import matplotlib.pyplot as plt
 

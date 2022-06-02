@@ -10,7 +10,10 @@ with matplotlib.
 This allows the scaling of the algorithm with the problem size to be
 visualized and understood.
 """
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import gc
 from datetime import datetime
 from sklearn.isotonic import isotonic_regression

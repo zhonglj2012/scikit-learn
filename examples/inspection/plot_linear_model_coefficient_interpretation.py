@@ -30,7 +30,10 @@ wage as a function of various features such as experience, age, or education.
 """
 
 # %%
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy as sp
 import pandas as pd
 import matplotlib.pyplot as plt

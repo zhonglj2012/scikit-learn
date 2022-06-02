@@ -9,7 +9,10 @@ on the hand-written digits dataset.
 # Author: Rob Zinkov <rob at zinkov dot com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from sklearn import datasets
 

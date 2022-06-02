@@ -14,7 +14,10 @@
 # (using Cython prange loops) which gives another multiplicative speed-up in
 # favorable cases on many-core machines.
 cimport numpy as cnp
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import warnings
 
 from .. import get_config

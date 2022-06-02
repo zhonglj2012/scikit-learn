@@ -16,7 +16,10 @@ web page of Sam Roweis:
 from os.path import exists
 from os import makedirs, remove
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.io import loadmat
 import joblib
 

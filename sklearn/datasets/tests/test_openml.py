@@ -8,7 +8,10 @@ from importlib import resources
 from io import BytesIO
 from urllib.error import HTTPError
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse
 import pytest
 

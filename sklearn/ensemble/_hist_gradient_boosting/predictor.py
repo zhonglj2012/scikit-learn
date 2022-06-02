@@ -3,7 +3,10 @@ This module contains the TreePredictor class which is used for prediction.
 """
 # Author: Nicolas Hug
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from .common import Y_DTYPE
 from ._predictor import _predict_from_raw_data

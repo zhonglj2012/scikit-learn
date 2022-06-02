@@ -2,7 +2,10 @@
 #          Gael Varoquaux <gael.varoquaux@normalesup.org>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy as sp
 from scipy import ndimage
 from scipy.sparse.csgraph import connected_components

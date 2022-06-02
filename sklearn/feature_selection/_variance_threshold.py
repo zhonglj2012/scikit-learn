@@ -1,7 +1,10 @@
 # Author: Lars Buitinck
 # License: 3-clause BSD
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from ..base import BaseEstimator
 from ._base import SelectorMixin
 from ..utils.sparsefuncs import mean_variance_axis, min_max_axis

@@ -6,7 +6,10 @@
 
 from operator import itemgetter
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.linalg import cholesky, cho_solve, solve
 import scipy.optimize
 from scipy.special import erf, expit

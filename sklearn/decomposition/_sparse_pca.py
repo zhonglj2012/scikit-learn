@@ -4,7 +4,10 @@
 
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from ..utils import check_random_state
 from ..utils.validation import check_is_fitted
@@ -112,7 +115,10 @@ class SparsePCA(_ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimato
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.datasets import make_friedman1
     >>> from sklearn.decomposition import SparsePCA
     >>> X, _ = make_friedman1(n_samples=200, n_features=30, random_state=0)
@@ -345,7 +351,10 @@ class MiniBatchSparsePCA(SparsePCA):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.datasets import make_friedman1
     >>> from sklearn.decomposition import MiniBatchSparsePCA
     >>> X, _ = make_friedman1(n_samples=200, n_features=30, random_state=0)

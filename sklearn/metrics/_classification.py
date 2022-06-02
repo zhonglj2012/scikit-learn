@@ -24,7 +24,10 @@ the lower the better.
 
 
 import warnings
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from scipy.sparse import coo_matrix
 from scipy.sparse import csr_matrix
@@ -202,7 +205,10 @@ def accuracy_score(y_true, y_pred, *, normalize=True, sample_weight=None):
 
     In the multilabel case with binary label indicators:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> accuracy_score(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
     0.5
     """
@@ -445,7 +451,10 @@ def multilabel_confusion_matrix(
     --------
     Multilabel-indicator case:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import multilabel_confusion_matrix
     >>> y_true = np.array([[1, 0, 1],
     ...                    [0, 1, 0]])
@@ -759,7 +768,10 @@ def jaccard_score(
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import jaccard_score
     >>> y_true = np.array([[0, 1, 1],
     ...                    [1, 1, 0]])
@@ -976,7 +988,10 @@ def zero_one_loss(y_true, y_pred, *, normalize=True, sample_weight=None):
 
     In the multilabel case with binary label indicators:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> zero_one_loss(np.array([[0, 1], [1, 1]]), np.ones((2, 2)))
     0.5
     """
@@ -1533,7 +1548,10 @@ def precision_recall_fscore_support(
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import precision_recall_fscore_support
     >>> y_true = np.array(['cat', 'dog', 'pig', 'cat', 'dog', 'pig'])
     >>> y_pred = np.array(['cat', 'pig', 'dog', 'cat', 'cat', 'dog'])
@@ -1726,7 +1744,10 @@ def class_likelihood_ratios(
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import class_likelihood_ratios
     >>> class_likelihood_ratios([0, 1, 0, 1, 0], [1, 1, 0, 0, 0])
     (1.5, 0.75)
@@ -2469,7 +2490,10 @@ def hamming_loss(y_true, y_pred, *, sample_weight=None):
 
     In the multilabel case with binary label indicators:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> hamming_loss(np.array([[0, 1], [1, 1]]), np.zeros((2, 2)))
     0.75
     """
@@ -2699,7 +2723,10 @@ def hinge_loss(y_true, pred_decision, *, labels=None, sample_weight=None):
 
     In the multiclass case:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[0], [1], [2], [3]])
     >>> Y = np.array([0, 1, 2, 3])
     >>> labels = np.array([0, 1, 2, 3])
@@ -2826,7 +2853,10 @@ def brier_score_loss(y_true, y_prob, *, sample_weight=None, pos_label=None):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import brier_score_loss
     >>> y_true = np.array([0, 1, 1, 0])
     >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])

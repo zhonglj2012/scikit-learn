@@ -102,7 +102,10 @@ _ = plt.title("Models' coefficients")
 # %%
 # Plot the marginal log-likelihood
 # --------------------------------
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 ard_scores = -np.array(ard.scores_)
 brr_scores = -np.array(brr.scores_)

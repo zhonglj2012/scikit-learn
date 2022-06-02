@@ -2,7 +2,10 @@
 #          Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import warnings
 
 from ._base import NeighborsBase
@@ -183,7 +186,10 @@ class LocalOutlierFactor(KNeighborsMixin, OutlierMixin, NeighborsBase):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.neighbors import LocalOutlierFactor
     >>> X = [[-1.1], [0.2], [101.1], [0.3]]
     >>> clf = LocalOutlierFactor(n_neighbors=2)

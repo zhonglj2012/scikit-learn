@@ -6,7 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 
 from sklearn.datasets.tests.test_common import check_as_frame

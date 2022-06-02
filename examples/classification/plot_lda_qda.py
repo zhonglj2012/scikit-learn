@@ -34,7 +34,10 @@ plt.cm.register_cmap(cmap=cmap)
 # Datasets generation functions
 # -----------------------------
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 def dataset_fixed_cov():

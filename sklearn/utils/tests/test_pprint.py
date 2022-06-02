@@ -1,7 +1,10 @@
 import re
 from pprint import PrettyPrinter
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.utils._pprint import _EstimatorPrettyPrinter
 from sklearn.linear_model import LogisticRegressionCV

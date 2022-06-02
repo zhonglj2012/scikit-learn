@@ -1,4 +1,7 @@
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 from joblib import Parallel
 from sklearn.utils.fixes import delayed

@@ -1,6 +1,9 @@
 from time import time
 import argparse
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.dummy import DummyClassifier
 

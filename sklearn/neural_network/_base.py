@@ -4,7 +4,10 @@
 # Author: Issam H. Laradji <issam.laradji@gmail.com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from scipy.special import expit as logistic_sigmoid
 from scipy.special import xlogy

@@ -11,7 +11,10 @@ import numbers
 from abc import ABC, abstractmethod
 from functools import partial
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import sparse
 from joblib import Parallel, effective_n_jobs
 
@@ -324,7 +327,10 @@ def lasso_path(
 
     Comparing lasso_path and lars_path with interpolation:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.linear_model import lasso_path
     >>> X = np.array([[1, 2, 3.1], [2.3, 5.4, 4.3]]).T
     >>> y = np.array([1, 2, 3.1])

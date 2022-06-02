@@ -19,7 +19,10 @@ show that we obtain similar results on a toy dataset.
 
 """  # noqa: E501
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 import matplotlib
 from sklearn.svm import OneClassSVM

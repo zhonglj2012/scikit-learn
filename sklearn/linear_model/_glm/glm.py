@@ -8,7 +8,10 @@ Generalized Linear Models with Exponential Dispersion Family
 
 import numbers
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.optimize
 
 from ..._loss.glm_distribution import TweedieDistribution

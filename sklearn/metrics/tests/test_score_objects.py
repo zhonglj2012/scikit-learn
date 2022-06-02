@@ -7,7 +7,10 @@ import numbers
 from unittest.mock import Mock
 from functools import partial
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 import joblib
 

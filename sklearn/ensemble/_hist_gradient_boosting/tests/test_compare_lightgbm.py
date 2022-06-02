@@ -1,7 +1,10 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.datasets import make_classification, make_regression
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 
 from sklearn.ensemble import HistGradientBoostingRegressor

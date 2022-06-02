@@ -4,7 +4,10 @@
 # enhancement of searching for the longest decreasing subsequence to
 # pool at each step.
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 cimport numpy as cnp
 cimport cython
 from cython cimport floating

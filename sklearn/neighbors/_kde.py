@@ -5,7 +5,10 @@ Kernel Density Estimation
 # Author: Jake Vanderplas <jakevdp@cs.washington.edu>
 
 import numbers
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.special import gammainc
 from ..base import BaseEstimator
 from ..utils import check_random_state, check_scalar
@@ -110,7 +113,10 @@ class KernelDensity(BaseEstimator):
     Compute a gaussian kernel density estimate with a fixed bandwidth.
 
     >>> from sklearn.neighbors import KernelDensity
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> rng = np.random.RandomState(42)
     >>> X = rng.random_sample((100, 3))
     >>> kde = KernelDensity(kernel='gaussian', bandwidth=0.5).fit(X)

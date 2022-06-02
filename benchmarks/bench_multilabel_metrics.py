@@ -11,7 +11,10 @@ import sys
 
 import matplotlib.pyplot as plt
 import scipy.sparse as sp
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.datasets import make_multilabel_classification
 from sklearn.metrics import (

@@ -69,7 +69,10 @@ from optparse import OptionParser
 import sys
 from time import time
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 
 # Display progress logs on stdout

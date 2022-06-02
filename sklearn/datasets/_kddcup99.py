@@ -14,7 +14,10 @@ import logging
 import os
 from os.path import exists, join
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import joblib
 
 from ._base import _fetch_remote

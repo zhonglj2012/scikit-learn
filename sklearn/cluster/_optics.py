@@ -11,7 +11,10 @@ License: BSD 3 clause
 """
 
 import warnings
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from ..exceptions import DataConversionWarning
 from ..metrics.pairwise import PAIRWISE_BOOLEAN_FUNCTIONS
@@ -215,7 +218,10 @@ class OPTICS(ClusterMixin, BaseEstimator):
     Examples
     --------
     >>> from sklearn.cluster import OPTICS
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> X = np.array([[1, 2], [2, 5], [3, 6],
     ...               [8, 7], [8, 8], [7, 3]])
     >>> clustering = OPTICS(min_samples=2).fit(X)

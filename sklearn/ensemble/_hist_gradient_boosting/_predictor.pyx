@@ -3,7 +3,10 @@
 cimport cython
 from cython.parallel import prange
 from libc.math cimport isnan
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from numpy.math cimport INFINITY
 
 from .common cimport X_DTYPE_C

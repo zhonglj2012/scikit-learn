@@ -2,7 +2,10 @@
 
 cimport cython
 from cython.parallel import prange
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from .common import Y_DTYPE
 from .common cimport Y_DTYPE_C

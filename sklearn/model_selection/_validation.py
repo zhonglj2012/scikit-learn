@@ -19,7 +19,10 @@ from traceback import format_exc
 from contextlib import suppress
 from collections import Counter
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import scipy.sparse as sp
 from joblib import Parallel, logger
 

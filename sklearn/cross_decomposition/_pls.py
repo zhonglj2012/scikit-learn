@@ -9,7 +9,10 @@ import numbers
 import warnings
 from abc import ABCMeta, abstractmethod
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy.linalg import svd
 
 from ..base import BaseEstimator, RegressorMixin, TransformerMixin
@@ -945,7 +948,10 @@ class PLSSVD(_ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimator):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.cross_decomposition import PLSSVD
     >>> X = np.array([[0., 0., 1.],
     ...               [1., 0., 0.],

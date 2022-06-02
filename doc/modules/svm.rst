@@ -534,7 +534,10 @@ and return a kernel matrix of shape ``(n_samples_1, n_samples_2)``.
 The following code defines a linear kernel and creates a classifier
 instance that will use that kernel::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn import svm
     >>> def my_kernel(X, Y):
     ...     return np.dot(X, Y.T)
@@ -553,7 +556,10 @@ option. You should then pass Gram matrix instead of X to the `fit` and
 `predict` methods. The kernel values between *all* training vectors and the
 test vectors must be provided:
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.datasets import make_classification
     >>> from sklearn.model_selection import train_test_split
     >>> from sklearn import svm

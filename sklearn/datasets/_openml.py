@@ -13,7 +13,10 @@ from urllib.error import HTTPError, URLError
 from urllib.request import urlopen, Request
 from warnings import warn
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from . import get_data_home
 from ._arff_parser import load_arff_from_gzip_file

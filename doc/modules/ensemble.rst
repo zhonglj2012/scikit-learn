@@ -544,7 +544,10 @@ for regression which can be specified via the argument
 
 ::
 
-    >>> import numpy as np
+    >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
     >>> from sklearn.metrics import mean_squared_error
     >>> from sklearn.datasets import make_friedman1
     >>> from sklearn.ensemble import GradientBoostingRegressor
@@ -999,7 +1002,10 @@ potential gain. When predicting, samples with missing values are assigned to
 the left or right child consequently::
 
   >>> from sklearn.ensemble import HistGradientBoostingClassifier
-  >>> import numpy as np
+  >>> import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
   >>> X = np.array([0, 1, 2, np.nan]).reshape(-1, 1)
   >>> y = [0, 0, 1, 1]

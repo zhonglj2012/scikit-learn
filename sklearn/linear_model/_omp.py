@@ -8,7 +8,10 @@
 import warnings
 from math import sqrt
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import linalg
 from scipy.linalg.lapack import get_lapack_funcs
 from joblib import Parallel

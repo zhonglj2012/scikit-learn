@@ -16,7 +16,10 @@ from itertools import product, chain
 from functools import partial
 
 import pytest
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.utils import all_estimators
 from sklearn.utils._testing import ignore_warnings

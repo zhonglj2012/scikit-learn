@@ -41,7 +41,10 @@ it is possible to extract the exact coefficients.
 # Author: Kornel Kielczewski -- <kornel.k@plusnet.pl>
 
 import matplotlib.pyplot as plt
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.datasets import make_regression
 from sklearn.linear_model import Ridge

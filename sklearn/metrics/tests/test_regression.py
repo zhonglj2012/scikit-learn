@@ -1,4 +1,7 @@
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from scipy import optimize
 from numpy.testing import assert_allclose
 from scipy.special import factorial, xlogy

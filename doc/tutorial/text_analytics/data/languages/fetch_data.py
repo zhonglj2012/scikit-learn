@@ -7,7 +7,10 @@ from urllib.request import Request, build_opener
 
 import lxml.html
 from lxml.etree import ElementTree
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 import codecs
 

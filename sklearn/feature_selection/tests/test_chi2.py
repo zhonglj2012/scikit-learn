@@ -5,7 +5,10 @@ specifically to work with sparse matrices.
 
 import warnings
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 from scipy.sparse import coo_matrix, csr_matrix
 import scipy.stats

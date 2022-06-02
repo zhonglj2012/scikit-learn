@@ -2,7 +2,10 @@
 #          Christian Lorentzen <lorentzen.ch@gmail.com>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 from pytest import approx
 from scipy.optimize import minimize

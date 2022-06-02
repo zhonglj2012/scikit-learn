@@ -3,7 +3,10 @@ Tests for the birch clustering algorithm.
 """
 
 from scipy import sparse
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import pytest
 
 from sklearn.cluster.tests.common import generate_clustered_data

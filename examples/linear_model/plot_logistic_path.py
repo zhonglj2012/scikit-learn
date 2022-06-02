@@ -47,7 +47,10 @@ X /= X.max()  # Normalize X to speed-up convergence
 # Compute regularization path
 # ---------------------------
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn import linear_model
 from sklearn.svm import l1_min_c

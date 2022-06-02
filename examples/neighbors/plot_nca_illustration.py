@@ -12,7 +12,10 @@ space. Please refer to the :ref:`User Guide <nca>` for more information.
 
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 from sklearn.neighbors import NeighborhoodComponentsAnalysis

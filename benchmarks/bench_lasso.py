@@ -13,7 +13,10 @@ In both cases, only 10% of the features are informative.
 """
 import gc
 from time import time
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 
 from sklearn.datasets import make_regression
 

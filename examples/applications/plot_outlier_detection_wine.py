@@ -37,7 +37,10 @@ example, none of these could be applied that easily.
 # Author: Virgile Fritsch <virgile.fritsch@inria.fr>
 # License: BSD 3 clause
 
-import numpy as np
+import jax.numpy as np
+import numpy as onp
+np.random = onp.random
+np.matrix = onp.matrix
 from sklearn.covariance import EllipticEnvelope
 from sklearn.svm import OneClassSVM
 import matplotlib.pyplot as plt
